@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 
 import { groupByFunc } from "./util";
-import Arc from "./Arc";
+import _Arc from "./Arc";
+
+import connect from "./Connect"
+
+const Arc = connect(_Arc)
 
 class Piechart extends Component {
     pie = d3

@@ -58,17 +58,9 @@ class Arc extends Component {
             );
     }
 
-    hover = () => {
-        this.props.selectTag(this.props.d.data.tag);
-    };
-
-    unhover = () => {
-        this.props.selectTag(null);
-    };
-
     render() {
         const { color, pathD, d } = this.state,
-            { selected } = this.props;
+            { selected, onMouseOver, onMouseOut } = this.props;
 
         return (
             <path
@@ -76,8 +68,8 @@ class Arc extends Component {
                 style={{
                     fill: selected ? color.saturate(2) : color
                 }}
-                onMouseOver={this.hover}
-                onMouseOut={this.unhover}
+                onMouseOver={onMouseOver}
+                onMouseOut={onMouseOut}
                 ref="elem"
             />
         );

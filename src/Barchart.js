@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import * as d3 from "d3";
 
 import { groupByFunc } from "./util";
-import Bar from "./Bar";
+import _Bar from "./Bar";
+import connect from "./Connect"
+
+const Bar = connect(_Bar)
 
 class Barchart extends Component {
     xScale = d3.scaleBand().paddingInner(0.1);
